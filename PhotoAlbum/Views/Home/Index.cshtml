@@ -1,8 +1,23 @@
-﻿@{
+﻿@model List<PhotoAlbum.Models.Photo> 
+<!-- comment -->
+
+@{
     ViewData["Title"] = "Home Page";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-</div>
+<!--Foreach in Razor-->
+<h1>Photo Album</h1>
+@foreach (var photo in Model)
+{
+    <div>
+        <h2>All Photos</h2>
+        <p>
+            @photo.Title<br />
+            @photo.Id<br />
+            @photo.Description<br />
+            @photo.FileName<br />
+            @photo.Creation
+        </p>
+    </div>
+}
+}
